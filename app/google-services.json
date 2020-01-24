@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "850651484408",
+    "firebase_url": "https://barberoo-ec8fb.firebaseio.com",
+    "project_id": "barberoo-ec8fb",
+    "storage_bucket": "barberoo-ec8fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850651484408:android:c4a05356e06e0393e16b0d",
+        "android_client_info": {
+          "package_name": "com.milios.Barberoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850651484408-7nb92q9qbosonookqehau6ljbt00u2ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhzhD-z_dzgg--zJypYp2qeAyrYhECAc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850651484408-7nb92q9qbosonookqehau6ljbt00u2ri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850651484408-7svguinsiuioujeup1ikjcd3h4b8k0gl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "edu.milios.Barberoo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850651484408:android:4fac633e82b53b9ce16b0d",
+        "android_client_info": {
+          "package_name": "edu.milios.Barberoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850651484408-jg9giq481lkn6jfmvvsiqtet0jj7m1br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.milios.Barberoo",
+            "certificate_hash": "9d00a845f89f360fc4b135e67e6baf5d31882a0a"
+          }
+        },
+        {
+          "client_id": "850651484408-7nb92q9qbosonookqehau6ljbt00u2ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhzhD-z_dzgg--zJypYp2qeAyrYhECAc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850651484408-7nb92q9qbosonookqehau6ljbt00u2ri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850651484408-7svguinsiuioujeup1ikjcd3h4b8k0gl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "edu.milios.Barberoo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
