@@ -1,14 +1,11 @@
 package edu.milios.Barberoo.data.model;
 
+
 import com.google.firebase.database.Exclude;
-import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-@IgnoreExtraProperties
+
 public class User {
 
     private String Uid;
@@ -18,45 +15,23 @@ public class User {
     private boolean IsBarber;
     private String HasBarber = null;
 
-    private List<Appointment> appointments = new ArrayList();
+    @Exclude
+    private ArrayList<Appointment> appointments;
+
 
     public User(){
 
     }
 
-    public User(String Uid, String Name,String Surname,String email,boolean IsBarber,String HasBarber, List<Appointment> appointments) {
+    public User(String Uid, String Name,String Surname,String email,boolean IsBarber,String HasBarber) {
         this.Uid = Uid;
         this.Name = Name;
         this.Surname = Surname;
         this.email = email;
         this.HasBarber = HasBarber;
         this.IsBarber = IsBarber;
-        this.appointments = appointments;
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", this.getUid());
-        result.put("hasBarber", this.getHasBarber());
-        result.put("isBarber", this.isBarber());
-        result.put("name", this.getName());
-        result.put("surname", this.getSurname());
-        result.put("email", this.getEmail());
-        HashMap<String,Appointment> ab =  new HashMap();
-        for (Appointment aa : this.getAppointments()) {
-            ab.put(aa.getUuid(),aa);
-
-        }
-        result.put("appointments", ab);
-
-
-        return result;
-    }
-
-    public User getThis(){
-        return this;
-    }
 
 
     public String getUid() {
@@ -75,11 +50,8 @@ public class User {
         Name = name;
     }
 
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
-    }
 
-    public List<Appointment> getAppointments() {
+    public ArrayList<Appointment> getAppointments() {
         return appointments;
     }
 

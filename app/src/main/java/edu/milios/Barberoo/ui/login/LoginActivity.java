@@ -36,7 +36,6 @@ public class LoginActivity extends BaseActivity implements
 
     private static final String TAG = "EmailPassword";
 
-    private TextView mStatusTextView;
     private TextView mDetailTextView;
     private EditText mEmailField;
     private EditText mPasswordField;
@@ -49,13 +48,12 @@ public class LoginActivity extends BaseActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
         rq = findViewById(R.id.rq_f);
         rq.requestFocus();
 
         // Views
-        mStatusTextView = findViewById(R.id.status);
-        mDetailTextView = findViewById(R.id.detail);
+
         mEmailField = findViewById(R.id.fieldEmail);
         mPasswordField = findViewById(R.id.fieldPassword);
         setProgressBar(R.id.progressBar);
@@ -63,8 +61,6 @@ public class LoginActivity extends BaseActivity implements
         // Buttons
         findViewById(R.id.emailSignInButton).setOnClickListener(this);
         findViewById(R.id.emailCreateAccountButton).setOnClickListener(this);
-        findViewById(R.id.signOutButton).setOnClickListener(this);
-        findViewById(R.id.verifyEmailButton).setOnClickListener(this);
 
         // [START initialize_auth]
         // Initialize Firebase Auth
@@ -146,10 +142,6 @@ public class LoginActivity extends BaseActivity implements
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
-                        if (!task.isSuccessful()) {
-                            mStatusTextView.setText(R.string.auth_failed);
-                        }
                         hideProgressBar();
                         // [END_EXCLUDE]
                     }
@@ -162,36 +154,7 @@ public class LoginActivity extends BaseActivity implements
         updateUI(null);
     }
 
-    private void sendEmailVerification() {
-        // Disable button
-        findViewById(R.id.verifyEmailButton).setEnabled(false);
 
-        // Send verification email
-        // [START send_email_verification]
-        final FirebaseUser user = mAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
-                        // Re-enable button
-                        findViewById(R.id.verifyEmailButton).setEnabled(true);
-
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this,
-                                    "Verification email sent to " + user.getEmail(),
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(LoginActivity.this,
-                                    "Failed to send verification email.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                        // [END_EXCLUDE]
-                    }
-                });
-        // [END send_email_verification]
-    }
 
     private boolean validateForm() {
         boolean valid = true;
@@ -221,13 +184,6 @@ public class LoginActivity extends BaseActivity implements
             Intent goToNextActivity = new Intent(LoginActivity.this, CalendarActivity.class);
             startActivity(goToNextActivity);
 
-        } else {
-            mStatusTextView.setText(R.string.signed_out);
-            mDetailTextView.setText(null);
-
-            findViewById(R.id.emailPasswordButtons).setVisibility(View.VISIBLE);
-            findViewById(R.id.emailPasswordFields).setVisibility(View.VISIBLE);
-            findViewById(R.id.signedInButtons).setVisibility(View.GONE);
         }
     }
 
@@ -238,10 +194,6 @@ public class LoginActivity extends BaseActivity implements
             createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.emailSignInButton) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        } else if (i == R.id.signOutButton) {
-            signOut();
-        } else if (i == R.id.verifyEmailButton) {
-            sendEmailVerification();
         }
     }
 

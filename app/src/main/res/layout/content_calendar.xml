@@ -13,9 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:dateTextAppearance="@style/CalenderViewDateCustomText"
+
         android:theme="@style/CalenderViewCustom"
-        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,19 +24,31 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/events"
+        app:layout_constraintBottom_toTopOf="@+id/eventsview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/events"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/eventsview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

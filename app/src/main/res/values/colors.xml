@@ -8,4 +8,33 @@
   <color name="secondaryDarkColor">#c8a415</color>
   <color name="primaryTextColor">#ffffff</color>
   <color name="secondaryTextColor">#000000</color>
+
+  <!-- COLOR FROM SELECTED ITEMS -->
+  <color name="color_artboard_Menu_bg">#eee</color>
+
+
+  <!-- COLOR FROM ASSETS PANEL -->
+  <color name="color_assets_2">#000</color>
+  <color name="color_assets_3">#000</color>
+  <color name="color_assets_4">#20272b</color>
+  <color name="color_assets_5">#263238</color>
+  <color name="color_assets_6">#424242</color>
+  <color name="color_assets_7">#7d7d7d</color>
+  <color name="color_assets_8">#bdbdbd</color>
+  <color name="color_assets_9">#ccc</color>
+  <color name="color_assets_10">#e4e7e8</color>
+  <color name="color_assets_11">#eceff0</color>
+  <color name="color_assets_12">#ffff8d</color>
+  <color name="color_assets_13">#b92d00</color>
+  <color name="color_assets_14">#ff6e6e</color>
+  <color name="color_assets_15">#ff4081</color>
+  <color name="color_assets_16">#3f51b5</color>
+  <color name="color_assets_17">#0097a7</color>
+  <color name="color_assets_18">#078b75</color>
+  <color name="color_assets_19">#549788</color>
+  <color name="color_assets_20">#009688</color>
+  <color name="color_assets_21">#4cb5ab</color>
+  <color name="color_assets_22">#80cbc4</color>
+  <color name="color_assets_23">#92cbc5</color>
+
 </resources>

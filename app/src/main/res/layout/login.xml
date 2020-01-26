@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:focusableInTouchMode="true"
+
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rq_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="296dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/ic_icon" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/secondaryColor"
+        android:fontFamily="@font/amethyst"
+        android:text="Barberoo"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Appointments made easy"
+        android:textColor="@color/color_assets_8"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/fieldEmail"
+        android:layout_width="303dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundedit"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/fieldPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundedit"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/fieldEmail"
+        app:layout_constraintStart_toStartOf="@+id/fieldEmail"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEmail" />
+
+    <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/emailSignInButton"
+        android:textColor="@color/secondaryTextColor"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundedbtn"
+        android:backgroundTint="@color/secondaryColor"
+        android:text="@string/sign_in"
+        android:theme="@style/ThemeOverlay.MyDarkButton"
+        app:layout_constraintEnd_toEndOf="@+id/fieldPassword"
+        app:layout_constraintStart_toStartOf="@+id/fieldPassword"
+        app:layout_constraintTop_toBottomOf="@+id/fieldPassword" />
+
+    <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/emailCreateAccountButton"
+        android:layout_width="0dp"
+        android:textColor="@color/secondaryTextColor"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundedbtn"
+        android:backgroundTint="@color/secondaryColor"
+        android:text="@string/create_account"
+        android:theme="@style/ThemeOverlay.MyDarkButton"
+        app:layout_constraintEnd_toEndOf="@+id/emailSignInButton"
+        app:layout_constraintStart_toStartOf="@+id/emailSignInButton"
+        app:layout_constraintTop_toBottomOf="@+id/emailSignInButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

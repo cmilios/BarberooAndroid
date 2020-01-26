@@ -15,15 +15,17 @@ public class Appointment {
     private String type;
     private Boolean state;
     private String uuid;
+    private String userId;
 
     public Appointment(){
 
     }
 
-    public Appointment(String uuid, String date, String time, String barberId, String type, Boolean state){
+    public Appointment(String uuid,String userId, String date, String time, String barberId, String type, Boolean state){
         this.date = date;
         this.time = time;
         this.barberId = barberId;
+        this.userId = userId;
         this.state = state;
         this.type = type;
         if(uuid!=null){
@@ -35,18 +37,6 @@ public class Appointment {
 
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("date", this.getDate());
-        result.put("time", this.getTime());
-        result.put("barberId", this.getBarberId());
-        result.put("state", this.getState());
-        result.put("type", this.getType());
-        result.put("uuid", this.getUuid());
-
-        return result;
-    }
 
 
     public String getDate() {
@@ -55,6 +45,14 @@ public class Appointment {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getTime() {
