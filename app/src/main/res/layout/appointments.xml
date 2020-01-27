@@ -5,7 +5,11 @@
     android:id="@+id/appointment"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:elevation="16dp"
+
+    android:layout_margin="4dp"
     android:clickable="true"
+    android:background="@drawable/rounthin"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
 
@@ -40,11 +44,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
 
+        android:layout_marginBottom="4dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/approvelist"
         app:layout_constraintStart_toEndOf="@+id/time"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/approvelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:buttonTint="@color/secondaryColor"
+        app:layout_constraintBottom_toBottomOf="@+id/usernametext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/usernametext"
+        app:layout_constraintTop_toTopOf="@+id/usernametext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package app.tutorialspoint.com.notifyme ;
+package edu.milios.Barberoo.ui.login;
 import android.app.Notification ;
 import android.app.NotificationChannel ;
 import android.app.NotificationManager ;

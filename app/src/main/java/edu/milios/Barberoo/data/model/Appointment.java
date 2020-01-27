@@ -1,5 +1,8 @@
 package edu.milios.Barberoo.data.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.firebase.database.Exclude;
 
 import java.time.LocalDateTime;
@@ -7,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Appointment {
+public class Appointment implements Parcelable   {
 
     private String date;
     private String time;
@@ -94,4 +97,48 @@ public class Appointment {
     public void setState(Boolean state) {
         this.state = state;
     }
+
+    protected Appointment(Parcel in) {
+        date = in.readString();
+        time = in.readString();
+        barberId = in.readString();
+        type = in.readString();
+        byte stateVal = in.readByte();
+        state = stateVal == 0x02 ? null : stateVal != 0x00;
+        uuid = in.readString();
+        userId = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(date);
+        dest.writeString(time);
+        dest.writeString(barberId);
+        dest.writeString(type);
+        if (state == null) {
+            dest.writeByte((byte) (0x02));
+        } else {
+            dest.writeByte((byte) (state ? 0x01 : 0x00));
+        }
+        dest.writeString(uuid);
+        dest.writeString(userId);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Appointment> CREATOR = new Parcelable.Creator<Appointment>() {
+        @Override
+        public Appointment createFromParcel(Parcel in) {
+            return new Appointment(in);
+        }
+
+        @Override
+        public Appointment[] newArray(int size) {
+            return new Appointment[size];
+        }
+    };
 }
